@@ -35,3 +35,25 @@ export const updateBrowserIcon = () => {
   link.href = 'https://img.favpng.com/5/0/4/wavefront-obj-file-3d-modeling-3d-computer-graphics-virus-chickenpox-png-favpng-XPv3dY9wDsWRzmevjx7uRU9aG.jpg';
   document.getElementsByTagName('head')[0].appendChild(link);
 }
+
+export const findGrowthFactor = (array: number[]) => {
+  let value = 0, count = 0
+  for (let i = array.length - 1; i >= 0; i--) {
+    if (count === 10) {
+      break;
+    }
+    value += array[i-1] / array[i-2]
+    count ++
+  }
+  return value/count
+}
+
+export const findNextDayValue = (count: number, growthFactor: number, power: number) => {
+  return Math.round(count*Math.pow(growthFactor, power))
+}
+
+export const findNextDate = (date: string) => {
+  const arrayData = date.split(" ")
+  const day = parseInt(arrayData[0]) + 1
+  return `${day} ${arrayData[1].trim()} 2020`
+}

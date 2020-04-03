@@ -56,7 +56,7 @@ const MapView = () => {
             {
                 !isLoading ?
                     <div className="m-60">
-                        <span onClick={gotoDashBoard} className="btn-flip" data-back="Go Back" data-front="Click"> Go Back </span>
+                        <span onClick={gotoDashBoard} className="btn-flip" data-back="Go Back" data-front="Back"> Go Back </span>
                         <FullMap
                             states={states}
                             stateDistrictWiseData={stateDistrictWiseData}

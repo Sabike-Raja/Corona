@@ -140,6 +140,14 @@ span:active {
   animation-play-state: paused;
 }
 
+.font-style-red {
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 30px;
+  color: red;
+  margin: 30px 17px;
+}
+
 /* Make it move! */
 @keyframes marquee {
   0% {

@@ -16,9 +16,7 @@ function ChartViewContainer() {
     const [isLoading, setisLoading] = useState<boolean>(false)
     const [month, setMonth] = useState<string>("March")
     const [caseTimeSeries, setCaseTimeSeries] = useState<CaseTimeSeries[]>([])
-    const [confirmedCase, setConfirmedcase] = useState<number[]>([])
-    const [recoveredCase, setRecoveredCase] = useState<number[]>([])
-    const [deceasedCase, setDeceasedCase] = useState<number[]>([])
+    const [ chartDataSets, setChartDataSets ] = useState<any>([])
 
     useEffect(() => {
         getStates((data: ChartApiData) => {
@@ -43,9 +41,33 @@ function ChartViewContainer() {
                 label.push(`${arrayData[0]} ${arrayData[1].slice(0, 3)}`)
             }
         })
-        setConfirmedcase(confirmed)
-        setRecoveredCase(recovered)
-        setDeceasedCase(deceased)
+        const dataSets = [
+            {
+                label: 'Confirmed', // Name the series
+                data: confirmed,
+                fill: false,
+                borderColor: '#f14d39', // Add custom color border (Line)
+                backgroundColor: '#f14d39', // Add custom color background (Points and Fill)
+                borderWidth: 1 // Specify bar border width
+            },
+            {
+                label: 'Recovered', // Name the series
+                data: recovered,
+                fill: false,
+                borderColor: '#79c68a', // Add custom color border (Line)
+                backgroundColor: '#79c68a', // Add custom color background (Points and Fill)
+                borderWidth: 1 // Specify bar border width   
+            },
+            {
+                label: 'DECEASED', // Name the series
+                data: deceased,
+                fill: false,
+                borderColor: '#b4b9be', // Add custom color border (Line)
+                backgroundColor: '#b4b9be', // Add custom color background (Points and Fill)
+                borderWidth: 1 // Specify bar border width   
+            }
+        ]
+        setChartDataSets(dataSets)
         setChartLabel(label)
         setisLoading(true)
     }
@@ -79,12 +101,12 @@ function ChartViewContainer() {
             </Helmet>
             <div className="m-60">
                 <div style={{ display: 'flex' }}>
-                    <span onClick={gotoDashBoard} className="btn-flip" data-back="Go Back" data-front="Click"> Go Back </span>
+                    <span onClick={gotoDashBoard} className="btn-flip" data-back="Go Back" data-front="Back"> Go Back </span>
                     <div style={{ width: '10%' }}>
                         <Dropdown options={["January", "February", "March", "April"]} onChange={(e) => changeMonth(e)} value={month} placeholder="Select an month" />
                     </div>
                 </div>
-                {isLoading ? <ChartView chartLabel={chartLabel} confirmedCase={confirmedCase} recoveredCase={recoveredCase} deceasedCase={deceasedCase} /> : <Loader />}
+                {isLoading ? <ChartView chartLabel={chartLabel} chartDataSets={chartDataSets} /> : <Loader />}
             </div>
         </Fragment>
     )
