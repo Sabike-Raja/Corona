@@ -1,0 +1,189 @@
+.font-style {
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.main-heading {
+  display: flex;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.Level {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  width: 30rem;
+
+  .level-item {
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+      align-self: center;
+    }
+
+    &:first-child {
+      margin-left: 0.5rem;
+    }
+
+    &:last-child {
+      margin-right: 0.5rem;
+    }
+  }
+
+  h1,
+  h5 {
+    margin-bottom: 0;
+  }
+
+  h1 {
+    font-weight: 600;
+  }
+
+  h4 {
+    margin-bottom: -0.5rem;
+  }
+
+  .is-cherry {
+    h1 {
+      color: #ff073a;
+    }
+
+    h4,
+    h5 {
+      color: #ff073a99;
+    }
+  }
+
+  .is-blue {
+    h1 {
+      color: #007bff;
+    }
+
+    h4,
+    h5 {
+      color: #007bff99;
+    }
+  }
+
+  .is-green {
+    h1 {
+      color: #28a745;
+    }
+
+    h4,
+    h5 {
+      color: #28a74599;
+    }
+  }
+
+  .is-gray {
+    h1 {
+      color: #6c757d;
+    }
+
+    h4,
+    h5 {
+      color: #6c757d99;
+    }
+  }
+}
+
+.cen {
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+span {
+  color: #9884fc;
+  cursor: pointer;
+}
+
+span:link {
+  text-decoration: none;
+}
+
+span:visited {
+  text-decoration: none;
+}
+
+span:hover {
+  text-decoration: underline;
+}
+
+span:active {
+  text-decoration: underline;
+}
+
+.container {
+  width: 35em;
+  height: 8em;
+  margin: 1em auto;
+  overflow: hidden;
+  background: white;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.marquee {
+  top: 6em;
+  position: relative;
+  box-sizing: border-box;
+  animation: marquee 15s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Make it move! */
+@keyframes marquee {
+  0% {
+    top: 8em;
+  }
+  100% {
+    top: -11em;
+  }
+}
+
+/* Make it look pretty */
+.microsoft .marquee {
+  margin: 0;
+  margin-top: 15px;
+  text-align: center;
+  padding: 0 1em;
+  line-height: 1.5em;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 30px;
+  color: #4747af;
+}
+
+.microsoft:before,
+.microsoft::before,
+.microsoft:after,
+.microsoft::after {
+  left: 0;
+  z-index: 1;
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 2em;
+  background-image: linear-gradient(top, #fff, rgba(255, 255, 255, 0));
+}
+
+.microsoft:after,
+.microsoft::after {
+  bottom: 0;
+  transform: rotate(180deg);
+}
+
+.microsoft:before,
+.microsoft::before {
+  top: 0;
+}

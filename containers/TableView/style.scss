@@ -1,0 +1,274 @@
+// @import '../../pages/index.scss';
+
+$blue: #007bff;
+$blue-light: #007bff10;
+$blue-hover: #007bff30;
+$blue-light-opaque: #eff7ff;
+$blue-mid: #007bff99;
+$pblue: #4c75f2;
+$pblue-light: #4c75f210;
+$pblue-hover: #4c75f230;
+$pblue-light-opaque: #eff7ff;
+$pblue-mid: #4c75f299;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$cherry: #ff073a;
+$cherry-mid: #ff073a99;
+$cherry-light: #ff073a20;
+$cherry-hover: #ff073a30;
+$cherry-light-opaque: #ffe0e6;
+$red: #dc3545;
+$red-light: #dc354520;
+$red-mid: #dc354599;
+$orange: #fd7e14;
+$orange-mid: #fd7e1499;
+$orange-light: #fd7e1420;
+$orange-hover: #fd7e1430;
+$orange-light-opaque: #ffefe2;
+$yellow: #ffc107;
+$yellow-light: #ffc10720;
+$yellow-hover: #ffc10730;
+$yellow-mid: #ffc10799;
+$yellow-light-opaque: #fff7e0;
+$green: #28a745;
+$green-light: #28a74520;
+$green-hover: #28a74530;
+$green-mid: #28a74599;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #fff;
+$gray: #6c757d;
+$gray-light: #6c757d10;
+$gray-hover: #6c757d20;
+$gray-mid: #6c757d99;
+$gray-dark: #343a40;
+$gray-opaque: #f1f1f1;
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+$purple: #201aa2dd;
+$purple-light: #201aa220;
+$purple-hover: #201aa230;
+$purple-mid: #201aa299;
+$purple-light-opaque: #e3e2f3;
+$speed: 0.5s;
+
+
+table {
+    position: relative;
+    width: 50rem;
+    align-self: center;
+    font-family: "archia";
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    border-spacing: 3px 2px;
+    border-collapse: separate;
+
+    thead {
+        background: $gray-light;
+        color: $gray-dark;
+        text-align: left;
+        font-size: 0.75rem;
+
+        th {
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.1s ease-in-out;
+            z-index: 99;
+
+            &.sticky {
+                top: 4px;
+                background: $gray-opaque;
+            }
+
+            &:hover {
+                background: #ecedee;
+            }
+
+            .heading-content {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                flex-direction: row;
+                height: 0.9rem;
+                align-items: center;
+
+                abbr {
+                    text-align: right;
+                }
+
+                svg {
+                    width: 10px;
+                    margin: 0;
+                    right: 0;
+                    stroke-width: 4px;
+                    margin-top: 0.15rem;
+                    margin-left: 0.25rem;
+                    color: $gray-mid;
+                }
+            }
+        }
+    }
+
+    tbody {
+        color: $gray;
+
+        tr {
+            transition: background 0.1s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                background: $gray-hover;
+            }
+
+            &.divider {
+                height: 0.5rem;
+                background: #6c757d10 !important;
+            }
+
+            &.spacer {
+                height: 0.5rem;
+                background: #fff !important;
+            }
+        }
+
+        td {
+            padding: 0.25rem;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            // text-align: right;
+            .deltas {
+                margin-right: 0.25rem;
+                font-size: 11px !important;
+
+                svg {
+                    width: 9px;
+                    height: 9px;
+                    stroke-width: 3;
+                    vertical-align: -0.25px;
+                }
+            }
+        }
+
+        td:first-child {
+            text-align: left;
+            max-width: 7.5rem;
+            word-wrap: break-word;
+        }
+
+        .state-last-update {
+            background: transparent;
+            transform: translateX(1rem);
+            &:hover {
+                background: #fff !important;
+            }
+
+            td {
+                .last-update {
+                    text-align: left;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+                    width: 100%;
+                }
+            }
+        }
+
+        .district-heading {
+            transform: translateX(1rem);
+            background: $gray-light;
+
+            td {
+                font-size: 0.75rem;
+                font-weight: 900;
+                padding: 0.45rem;
+                color: $gray-dark;
+                background: $gray-light;
+
+                .heading-content {
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+                    flex-direction: row;
+                    height: 0.9rem;
+                    align-items: center;
+
+                    abbr {
+                        text-align: right;
+                    }
+
+                    svg {
+                        width: 10px;
+                        margin: 0;
+                        right: 0;
+                        stroke-width: 4px;
+                        margin-left: 0.25rem;
+                        margin-top: 0.15rem;
+                        color: $gray-mid;
+                    }
+                }
+            }
+        }
+
+        max-width: 10rem;
+
+        .district {
+            transform: translateX(1rem);
+        }
+    }
+
+    .affected-count {
+        position: absolute;
+        margin: 0;
+        top: -1rem;
+        color: $gray-mid;
+        right: 0;
+    }
+
+    .is-total {
+        td {
+            background: $gray-hover;
+        }
+    }
+
+    .dropdown {
+        position: absolute;
+        left: -0.75rem;
+        background: $gray-light;
+        border-radius: 50%;
+        width: 13px;
+        height: 13px;
+        margin-top: 0.5rem;
+        cursor: pointer;
+        transition: background 0.2s ease-in-out;
+
+        &:hover {
+            background: $gray-hover;
+        }
+
+        svg {
+            position: absolute;
+            top: -0.35rem;
+            left: 1px;
+            width: 11px;
+            stroke-width: 3;
+        }
+    }
+}
+table {
+    td {
+        max-width: 6.75rem;
+    }
+}
+
+.green-font {
+    font-weight: 900;
+    font-size: 11px !important;
+}

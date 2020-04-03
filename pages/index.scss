@@ -1,0 +1,373 @@
+/* Color Pallete */
+
+$blue: #007bff;
+$blue-light: #007bff10;
+$blue-hover: #007bff30;
+$blue-light-opaque: #eff7ff;
+$blue-mid: #007bff99;
+$pblue: #4c75f2;
+$pblue-light: #4c75f210;
+$pblue-hover: #4c75f230;
+$pblue-light-opaque: #eff7ff;
+$pblue-mid: #4c75f299;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$cherry: #ff073a;
+$cherry-mid: #ff073a99;
+$cherry-light: #ff073a20;
+$cherry-hover: #ff073a30;
+$cherry-light-opaque: #ffe0e6;
+$red: #dc3545;
+$red-light: #dc354520;
+$red-mid: #dc354599;
+$orange: #fd7e14;
+$orange-mid: #fd7e1499;
+$orange-light: #fd7e1420;
+$orange-hover: #fd7e1430;
+$orange-light-opaque: #ffefe2;
+$yellow: #ffc107;
+$yellow-light: #ffc10720;
+$yellow-hover: #ffc10730;
+$yellow-mid: #ffc10799;
+$yellow-light-opaque: #fff7e0;
+$green: #28a745;
+$green-light: #28a74520;
+$green-hover: #28a74530;
+$green-mid: #28a74599;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #fff;
+$gray: #6c757d;
+$gray-light: #6c757d10;
+$gray-hover: #6c757d20;
+$gray-mid: #6c757d99;
+$gray-dark: #343a40;
+$gray-opaque: #f1f1f1;
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+$purple: #201aa2dd;
+$purple-light: #201aa220;
+$purple-hover: #201aa230;
+$purple-mid: #201aa299;
+$purple-light-opaque: #e3e2f3;
+$speed: 0.5s;
+
+.m-60 {
+  margin: 60px;
+}
+h1 {
+  font-family: "archia";
+  font-size: 24px !important;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+a.buttonOne {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid black;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: black;
+  text-align: center;
+  transition: all 0.2s;
+}
+a.buttonOne:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.MapExplorer {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 44rem;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    color: $gray-dark;
+    margin-bottom: 2.5rem;
+    align-self: flex-start;
+  }
+
+  .svg-parent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 1rem;
+
+    svg {
+      align-self: center;
+
+      text {
+        text-transform: uppercase;
+        text-align: right;
+        font-family: "archia";
+        font-weight: 600;
+        fill: $gray;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .back-button {
+    position: absolute;
+    right: 0;
+    background: $orange-light;
+    color: $orange;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background: $orange-hover;
+    }
+  }
+
+  .meta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 1rem;
+
+    .district-last-update {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    h2 {
+      margin: 0;
+      color: #e23028;
+      word-wrap: break-word;
+      font-weight: 900;
+    }
+
+    h4 {
+      margin: 0;
+      color: $gray-mid;
+      word-wrap: break-word;
+    }
+
+    .unknown {
+      position: absolute;
+      top: 17rem;
+      width: 5rem;
+    }
+  }
+
+  .map-stats {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 5rem;
+    position: relative;
+
+    h1,
+    h5,
+    h6,
+    h3 {
+      margin: 0;
+    }
+
+    h3 {
+      color: $gray-mid;
+      font-weight: 900;
+    }
+
+    .stats {
+      background: $cherry-light;
+      color: $cherry;
+      padding: 0.5rem;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      margin-left: 0.25rem;
+      margin-right: 0.25rem;
+      margin-bottom: 0.5rem;
+      width: 100%;
+
+      .stats-bottom {
+        display: flex;
+        flex-direction: row;
+
+        h6 {
+          margin-top: auto;
+          margin-bottom: 0.25rem;
+        }
+      }
+
+      h1 {
+        font-weight: 600;
+      }
+
+      &.is-green {
+        background: $green-light;
+        h5,
+        h6 {
+          color: $green-mid;
+        }
+
+        h1 {
+          color: $green;
+        }
+      }
+
+      &.is-blue {
+        background: $blue-light;
+        h5,
+        h6 {
+          color: $blue-mid;
+        }
+
+        h1 {
+          color: $blue;
+        }
+      }
+
+      &.is-gray {
+        background: $gray-light;
+        h5,
+        h6 {
+          color: $gray-mid;
+        }
+
+        h1 {
+          color: $gray;
+        }
+      }
+
+      &.is-yellow {
+        background: $warning;
+        h5,
+        h6 {
+          color: $white;
+        }
+
+        h1 {
+          color: $white;
+        }
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.btn-flip {
+  opacity: 1;
+  outline: 0;
+  color: #fff;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  margin-right: 15px;
+
+  &:hover {
+    &:after {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+    }
+
+    &:before {
+      opacity: 0;
+      transform: translateY(50%) rotateX(90deg);
+    }
+  }
+
+  &:after {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    color: #323237;
+    display: block;
+    transition: $speed;
+    position: absolute;
+    background: #adadaf;
+    content: attr(data-back);
+    transform: translateY(-50%) rotateX(90deg);
+  }
+
+  &:before {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: #adadaf;
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition: $speed;
+    position: relative;
+    background: #323237;
+    content: attr(data-front);
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+.last-update {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  text-align: right;
+  margin-bottom: auto;
+  margin-top: 1.25rem;
+  margin-left: 30px;
+
+  h6 {
+    color: #28a745;
+    font-size: 20px;
+  }
+
+  h3 {
+    color: #28a745;
+    font-weight: 600;
+  }
+
+  h3,
+  h6 {
+    margin: 0;
+  }
+}
+
+.app-loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 30001;
+  opacity: 0.8;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media all and (max-width: 30em) {
+  a.buttonOne {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
