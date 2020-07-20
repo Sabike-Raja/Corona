@@ -38,7 +38,7 @@
     "d3-svg-legend": "^2.25.6",
     "date-fns": "^2.11.1",
     "document-register-element": "^1.14.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "next": "^9.3.4",
     "nextjs-fonts": "^0.22.0",
