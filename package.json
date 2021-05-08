@@ -50,6 +50,6 @@
     "react-helmet": "^5.2.1",
     "react-spinners": "^0.8.1",
     "topojson": "^3.0.2",
-    "typeorm": "^0.2.24"
+    "typeorm": "^0.2.25"
   }
 }
