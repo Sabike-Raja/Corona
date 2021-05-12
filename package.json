@@ -33,7 +33,7 @@
     "@zeit/next-sass": "^1.0.1",
     "@zeit/next-stylus": "1.0.1",
     "axios": "^0.19.2",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "d3": "^5.15.1",
     "d3-svg-legend": "^2.25.6",
     "date-fns": "^2.11.1",
